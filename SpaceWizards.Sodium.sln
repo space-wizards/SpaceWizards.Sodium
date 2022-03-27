@@ -12,6 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 		LICENSE.txt = LICENSE.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceWizards.Sodium.Interop", "SpaceWizards.Sodium.Interop\SpaceWizards.Sodium.Interop.csproj", "{4565084B-3F40-44EA-B0B8-75DBFB9398EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{7F6778F9-368B-4F4E-BC12-88AA25F85329}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\GenBindings.rsp = Scripts\GenBindings.rsp
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceWizards.Sodium.Tests", "SpaceWizards.Sodium.Tests\SpaceWizards.Sodium.Tests.csproj", "{5E1C1FFF-6F86-4D33-9038-CF314CF1320B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +34,16 @@ Global
 		{52EC2D2E-B57B-45E3-944A-247C750731C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52EC2D2E-B57B-45E3-944A-247C750731C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52EC2D2E-B57B-45E3-944A-247C750731C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4565084B-3F40-44EA-B0B8-75DBFB9398EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4565084B-3F40-44EA-B0B8-75DBFB9398EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4565084B-3F40-44EA-B0B8-75DBFB9398EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4565084B-3F40-44EA-B0B8-75DBFB9398EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E1C1FFF-6F86-4D33-9038-CF314CF1320B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E1C1FFF-6F86-4D33-9038-CF314CF1320B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E1C1FFF-6F86-4D33-9038-CF314CF1320B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E1C1FFF-6F86-4D33-9038-CF314CF1320B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7F6778F9-368B-4F4E-BC12-88AA25F85329} = {40BDE6AC-8B1C-4E85-960E-B3D9EA0FEC6C}
 	EndGlobalSection
 EndGlobal
