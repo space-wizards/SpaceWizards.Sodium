@@ -1,6 +1,6 @@
 ﻿namespace SpaceWizards.Sodium.Interop;
 
-public partial class Methods
+public partial class Libsodium
 {
     public static ulong sodium_base64_ENCODED_LEN(ulong BIN_LEN, ulong VARIANT)
     {
