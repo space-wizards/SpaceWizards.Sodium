@@ -5,6 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PackageId>SpaceWizards.Sodium.Interop</PackageId>
+    <Version>1.0.18-beta1</Version>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>Native API binding for libsodium.</Description>
+    <NoWarn>CS1591</NoWarn>
+    <PackageTags>libsodium</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
