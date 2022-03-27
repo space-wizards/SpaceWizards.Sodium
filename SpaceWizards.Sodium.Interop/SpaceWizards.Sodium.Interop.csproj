@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Generated" />
-    </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Generated"/>
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="libsodium" Version="1.0.18.1" />
-    </ItemGroup>
-    
+  <ItemGroup>
+    <PackageReference Include="libsodium" Version="1.0.18.1"/>
+  </ItemGroup>
+
 </Project>
