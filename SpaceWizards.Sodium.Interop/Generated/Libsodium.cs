@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace SpaceWizards.Sodium.Interop
 {
-    public static unsafe partial class Methods
+    public static unsafe partial class Libsodium
     {
         [DllImport("libsodium", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int sodium_init();
@@ -2679,6 +2679,15 @@ namespace SpaceWizards.Sodium.Interop
 
         [DllImport("libsodium", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void crypto_stream_salsa20_keygen([NativeTypeName("unsigned char [32]")] byte* k);
+
+        [NativeTypeName("#define crypto_stream_salsa20_KEYBYTES 32U")]
+        public const uint crypto_stream_salsa20_KEYBYTES = 32U;
+
+        [NativeTypeName("#define crypto_stream_salsa20_NONCEBYTES 8U")]
+        public const uint crypto_stream_salsa20_NONCEBYTES = 8U;
+
+        [NativeTypeName("#define crypto_stream_salsa20_MESSAGEBYTES_MAX SODIUM_SIZE_MAX")]
+        public const ulong crypto_stream_salsa20_MESSAGEBYTES_MAX = ((0xffffffffffffffffUL) < (0xffffffffffffffffUL) ? (0xffffffffffffffffUL) : (0xffffffffffffffffUL));
 
         [DllImport("libsodium", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("size_t")]

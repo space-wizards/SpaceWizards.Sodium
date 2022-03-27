@@ -9,7 +9,7 @@ generate-macro-bindings
 unix-types
 log-potential-typedef-remappings
 
---exclude 
+--exclude
 randombytes_salsa20_implementation
 CRYPTO_ALIGN
 SODIUM_C99
@@ -93,3 +93,6 @@ libsodium
 --remap
 crypto_aead_aes256gcm_state_=crypto_aead_aes256gcm_state
 crypto_auth_hmacsha512_state=crypto_auth_hmacsha512256_state
+
+--methodClassName
+Libsodium

@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 using NUnit.Framework;
-using static SpaceWizards.Sodium.Interop.Methods;
+using static SpaceWizards.Sodium.Interop.Libsodium;
 
 namespace SpaceWizards.Sodium.Tests;
 
@@ -12,10 +12,10 @@ public sealed class SecretBoxTest
     {
         var message = RandomNumberGenerator.GetBytes(1024);
         var cipher = RandomNumberGenerator.GetBytes((int)(1024 + crypto_secretbox_MACBYTES));
-        
+
         var key = stackalloc byte[(int)crypto_secretbox_KEYBYTES];
         var nonce = stackalloc byte[(int)crypto_secretbox_NONCEBYTES];
-        
+
         crypto_secretbox_keygen(key);
         randombytes_buf(nonce, crypto_secretbox_NONCEBYTES);
         fixed (byte* mPtr = message)
@@ -30,7 +30,7 @@ public sealed class SecretBoxTest
         {
             crypto_secretbox_open_easy(dPtr, cPtr, (ulong)cipher.Length, nonce, key);
         }
-        
+
         Assert.That(decrypted, Is.EquivalentTo(message));
     }
 }
