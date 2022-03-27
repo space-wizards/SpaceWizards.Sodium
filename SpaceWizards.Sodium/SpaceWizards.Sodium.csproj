@@ -4,6 +4,17 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PackageId>SpaceWizards.Sodium</PackageId>
+    <Version>0.1.0</Version>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>Simple API binding for libsodium.</Description>
+    <NoWarn>CS1591</NoWarn>
+    <PackageTags>libsodium</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpaceWizards.Sodium.Interop\SpaceWizards.Sodium.Interop.csproj" />
+  </ItemGroup>
 
 </Project>
