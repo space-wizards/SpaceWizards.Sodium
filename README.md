@@ -1,4 +1,4 @@
-# SpaceWizards.Sodium
+# SpaceWizards.Sodium ![Nuget](https://img.shields.io/nuget/v/SpaceWizards.Sodium)
 
 A .NET [libsodium](https://libsodium.gitbook.io/doc/) binding that doesn't suck. Actually exposes the native API so you don't have to cry yourself to sleep in unnecessary allocations or OOP nonsense.
 
