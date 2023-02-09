@@ -18,8 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- 1.0.18.2 is just libsodium 1.0.18 but with more architectures added: linux-arm, linux-arm64 in 10.0.18.1,
-      and osx-arm64 in 10.0.18.2. Also support for some older .NETs was dropped in 18.1. -->
     <PackageReference Include="libsodium" Version="1.0.18.2" />
   </ItemGroup>
 
