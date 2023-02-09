@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageId>SpaceWizards.Sodium.Interop</PackageId>
-    <Version>1.0.18-beta3</Version>
+    <Version>1.0.18-beta4</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Native API binding for libsodium.</Description>
     <NoWarn>CS1591</NoWarn>
@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="libsodium" Version="1.0.18" />
+    <PackageReference Include="libsodium" Version="1.0.18.2" />
   </ItemGroup>
 
 </Project>
