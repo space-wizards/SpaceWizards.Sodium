@@ -28,16 +28,14 @@ public static class CryptoPwHash
     public const long OpsLimitInteractive = crypto_pwhash_OPSLIMIT_INTERACTIVE;
     public const long OpsLimitModerate = crypto_pwhash_MEMLIMIT_MODERATE;
     public const long OpsLimitSensitive = crypto_pwhash_MEMLIMIT_SENSITIVE;
-
-
-
+    
     public static unsafe bool Derive(
         Span<byte> key,
         ReadOnlySpan<byte> salt,
-        ReadOnlySpan<sbyte> password,
-        ulong opsLimit,
-        ulong memLimit,
-        int alg)
+        ReadOnlySpan<byte> password,
+        ulong opsLimit = OpsLimitInteractive,
+        ulong memLimit = MemLimitInteractive,
+        int alg = AlgDefault)
     {
         // Libsodiums pwhash max output length is greater than Int32.MaxValue
         if (key.Length < BytesMin)
@@ -61,12 +59,12 @@ public static class CryptoPwHash
 
         fixed (byte* k = key)
         fixed (byte* s = salt)
-        fixed (sbyte* p = password)
+        fixed (byte* p = password)
         {
             var ret = crypto_pwhash(
                 k,
                 (ulong)key.Length,
-                p,
+                (sbyte*)p,
                 (ulong)password.Length,
                 s,
                 opsLimit,
