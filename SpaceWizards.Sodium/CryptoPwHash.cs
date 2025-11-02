@@ -13,10 +13,6 @@ public static class CryptoPwHash
     public const int PasswdMin = (int)crypto_pwhash_PASSWD_MIN;
     public const int BytesMin = (int)crypto_pwhash_BYTES_MIN;
 
-    public const int AlgDefault = crypto_pwhash_ALG_DEFAULT;
-    public const int AlgArgon2I13 = crypto_pwhash_ALG_ARGON2I13;
-    public const int AlgArgon2Id13 = crypto_pwhash_ALG_ARGON2ID13;
-
     public const uint MemLimitMin = crypto_pwhash_MEMLIMIT_MIN;
     public const ulong MemLimitMax = crypto_pwhash_MEMLIMIT_MAX;
     public const long MemLimitInteractive = crypto_pwhash_MEMLIMIT_INTERACTIVE;
@@ -28,14 +24,14 @@ public static class CryptoPwHash
     public const long OpsLimitInteractive = crypto_pwhash_OPSLIMIT_INTERACTIVE;
     public const long OpsLimitModerate = crypto_pwhash_MEMLIMIT_MODERATE;
     public const long OpsLimitSensitive = crypto_pwhash_MEMLIMIT_SENSITIVE;
-    
+
     public static unsafe bool Derive(
         Span<byte> key,
         ReadOnlySpan<byte> salt,
         ReadOnlySpan<byte> password,
         ulong opsLimit = OpsLimitInteractive,
         ulong memLimit = MemLimitInteractive,
-        int alg = AlgDefault)
+        PwHashAlgorithm alg = PwHashAlgorithm.AlgDefault)
     {
         // Libsodiums pwhash max output length is greater than Int32.MaxValue
         if (key.Length < BytesMin)
@@ -54,9 +50,6 @@ public static class CryptoPwHash
         if (memLimit is < MemLimitMin or > MemLimitMax)
             throw new ArgumentException("MemLimit is invalid size");
 
-        if (alg is not AlgDefault and not AlgArgon2I13 and not AlgArgon2Id13 )
-            throw new ArgumentException("Algorithm is invalid");
-
         fixed (byte* k = key)
         fixed (byte* s = salt)
         fixed (byte* p = password)
@@ -69,9 +62,16 @@ public static class CryptoPwHash
                 s,
                 opsLimit,
                 (nuint)memLimit,
-                alg);
+                (int)alg);
 
             return ret == 0;
         }
     }
+}
+
+public enum PwHashAlgorithm
+{
+    AlgDefault = crypto_pwhash_ALG_DEFAULT,
+    AlgArgon2I13 = crypto_pwhash_ALG_ARGON2I13,
+    AlgArgon2Id13 = crypto_pwhash_ALG_ARGON2ID13,
 }
