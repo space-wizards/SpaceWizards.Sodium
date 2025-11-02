@@ -45,10 +45,10 @@ public static class CryptoPwHash
             throw new ArgumentException($"Output must be at least {nameof(PasswdMin)} bytes");
 
         if (opsLimit is < OpsLimitMin or > OpsLimitMax)
-            throw new ArgumentException("OpsLimit is invalid size");
+            throw new ArgumentException("OpsLimit count is invalid");
 
         if (memLimit is < MemLimitMin or > MemLimitMax)
-            throw new ArgumentException("MemLimit is invalid size");
+            throw new ArgumentException("MemLimit count is invalid");
 
         fixed (byte* k = key)
         fixed (byte* s = salt)
